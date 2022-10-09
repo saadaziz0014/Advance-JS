@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread</title>
+</head>
+<body>
+    <h1>Spread --Go to console</h1>
+    <script>
+        let mul = (author, ...args) =>{
+            let m = 1;
+            for(let i in args){
+                m *= args[i];
+            }
+            return `Author ${author}'s Multiplication = ${m}<br>`;
+        }
+        let arr = [1,3,5];
+        //document.write(mul("Saad",arr)); array not cover without rest operator
+        document.write(mul("Saad",...arr));
+
+        //deep copy
+        document.write(`<h3>Deep Copy</h3><br>`);
+        let arr1 = [1,3,5];
+        let arr2 = arr1;
+        document.write(`Array 1 = ${arr1} and Array 2 = ${arr2}<br>`);
+        arr1.push(7);
+        document.write(`After push in Array 1 = ${arr1} and Array 2 = ${arr2}<br>`);
+
+        //shallow copy
+        document.write(`<h3>Shallow Copy</h3><br>`);
+        let arr3 = [1,2,3];
+        let arr4 = [...arr3];
+        document.write(`Array 3 = ${arr3} and Array 4 = ${arr4}<br>`);
+        arr3.push(7);
+        document.write(`After push in Array 3 = ${arr3} and Array 2 = ${arr4}<br>`);
+
+        //concatenation
+        document.write(`<h3>Concatenation with spread</h3><br>`);
+        let obj1 = {
+            name: "Saad"
+        }
+        let obj2 = {
+            age: 22
+        }
+        let obj3 = {...obj1,...obj2};
+        document.write(`Concatenate object is ${obj3.name} and ${obj3.age}<br>`);
+    </script>
+</body>
+</html>

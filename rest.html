@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest</title>
+</head>
+<body>
+    <h1>Rest --Go to console</h1>
+    <script>
+        //Old
+        function sum() { //only with non-arrow
+            let s = 0;
+            for(let i in arguments){
+                s += arguments[i];
+            }
+            return s;
+        }
+        document.write(`Sum of numbers with old method is ${sum(30,20,10,90)}<br>`);
+
+        //rest
+        let mul = (author, ...args) =>{
+            let m = 1;
+            for(let i in args){
+                m *= args[i];
+            }
+            return `Author ${author}'s Multiplication = ${m}<br>`;
+        }
+        document.write(`With rest method ${mul("Saad",1,2,3,4)}`);
+    </script>
+</body>
+</html>

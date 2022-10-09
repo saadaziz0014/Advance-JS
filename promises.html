@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+    <h1>Promises --Go to console</h1>
+    <script>
+        const promises = (a,b) =>{
+            return new Promise((resolve,reject) =>{
+                let c = a/b;
+                if(c == Infinity){
+                    reject(`Math error`);
+                }
+                else{
+                    resolve(`Answer: ${c}`);
+                }
+            })
+        }
+
+        let num1 = prompt("Enter divisible");
+        let num2 = prompt("Enter divisor");
+        promises(num1,num2).then((result)=>{
+            document.write(`Promise fullfiled ${result}<br>`);
+        }).catch((error)=>{
+            document.write(`Promise rejected ${error}<br>`);
+        })
+    </script>
+</body>
+</html>

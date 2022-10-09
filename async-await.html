@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async - Await</title>
+  </head>
+  <body>
+    <h1>Async - Await --Go to console</h1>
+    <button onclick="basics()">Basic</button>
+    <br /><br /><br />
+    <button onclick="fetching()">Fetch call with async aawait</button>
+    <script>
+      let basics = () => {
+        //basic work
+        document.write(`<h4>Basic</h4>`);
+        let myFun = async () => {
+          document.write(`1<br>`);
+          await document.write(`2<br>`);
+          document.write(`3<br>`);
+        };
+        myFun();
+        document.write(`4<br>`);
+        document.write(`<br>`);
+      };
+
+      let fetching = () => {
+        document.write(`<h4>Fetch with async await</h4>`);
+        async function fetchD() {
+          try {
+            return await fetch("content.txt").text();
+          } catch (err) {
+            console.log(err);
+          }
+        }
+        fetchD.then((data) => {
+          document.write(`${data}<br>`);
+        });
+      };
+    </script>
+  </body>
+</html>

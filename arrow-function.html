@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+<body>
+    <h1>Arrow Function --Go to console</h1>
+    <script>
+        //Old methods
+        function myN(num){
+            return num;
+        }
+        console.log(`${myN(22)}\n`);
+
+        let myM = function(num){
+            return num;
+        }
+        console.log(`${myM(23)}\n`);
+
+        //New Method aka Arrow Function
+        let myO = (age) => age;
+        console.log(`${myO(24)}\n`);
+
+        const myP = (age,name) => {
+            return `Name is ${name} and Age is ${age}\n`;
+        }
+        console.log(`${myP(25,"Saady")}\n`);
+    </script>
+</body>
+</html>

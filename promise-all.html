@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise.all</title>
+</head>
+<body>
+    <h1>Promise.all</h1>
+    <script>
+        let promiser = (num,prnum) =>{
+            return (resolve,reject) =>{
+                setTimeout(()=>{
+                    if(num > 0){
+                        resolve(num);
+                        document.write(`${prnum} passed<br>`);
+                    }
+                    else{
+                        reject("Error...");
+                        document.write(`${prnum} failed<br>`);
+                    }
+                }, num * 100);
+            }
+        }
+        let n = prompt("Number 1 >>");
+        let m = prompt("Number 2 >>");
+
+        let p1 = new Promise(promiser(n,"First"));
+        let p2 = new Promise(promiser(m,"Second"));
+
+        Promise.all([p1,p2]).then((result)=>{
+            document.write(`${result} and Sum =`);
+            let s = 0;
+            for(let i in result){
+                s += result[i];
+            }
+            document.write(`${s}<br>`);
+        }).catch((err)=>{
+            document.write(`${err}<br>`);
+        })
+    </script>
+</body>
+</html>

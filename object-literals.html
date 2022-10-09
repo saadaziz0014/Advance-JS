@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Literals</title>
+</head>
+<body>
+    <h1>Object Literals --Go to console</h1>
+    <script>
+        //old method
+        document.write(`<h3>Old methods</h3>`);
+        let name = "Saad";
+        let age = 22;
+        let obj = {
+            name: name,
+            age: age,
+            display: function(){
+                return `Object is ${this.name} and his Age is ${this.age}<br>`;
+            }
+        }
+        document.write(obj.display());
+
+        //new method
+        document.write(`<h3>New methods</h3>`);
+        let a = "age";
+        let obj2 = {
+            name,
+            [a]:age,
+            getAge(){
+                return age;
+            },
+            'show display'(){
+                document.write(`Name is ${this.name} and Age is ${this.age}<br>`);
+            }
+        }
+        document.write(`Age is ${obj2['getAge']()}<br>`);
+        obj2['show display']();
+    </script>
+</body>
+</html>

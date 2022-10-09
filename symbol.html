@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbol</title>
+</head>
+<body>
+    <h1>Symbol</h1>
+    <script>
+        let a = Symbol("how are you");
+        let b = Symbol();
+        console.log(a);
+
+        let obj = {
+            name : "saad",
+            [a] : 25
+        }
+        obj[b] = 67;
+        console.log(obj[a]);
+    </script>
+</body>
+</html>
